@@ -1,39 +1,38 @@
 # ChatGPT
 
-[![CI](https://github.com/wieslawsoltes/ChatGPT/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/wieslawsoltes/ChatGPT/actions/workflows/build.yml)
 
 [![NuGet](https://img.shields.io/nuget/v/ChatGPT.svg)](https://www.nuget.org/packages/ChatGPT)
 [![NuGet](https://img.shields.io/nuget/dt/ChatGPT.svg)](https://www.nuget.org/packages/ChatGPT)
 
-A ChatGPT C# client for graphical user interface runs on MacOS, Windows, Linux, Android, iOS and Browser. Powered by [Avalonia UI](https://avaloniaui.net/) framework.
+用于图形用户界面的ChatGPT C#客户端在MacOS、Windows、Linux、Android、iOS和Browser上运行。由[Avalonia UI]提供技术支持(https://avaloniaui.net/)框架。
 
-To make the app work, you need to set the [OpenAI API key](https://beta.openai.com/account/api-keys) as the `OPENAI_API_KEY` environment variable or set API key directly in app settings.
+要使应用程序工作，您需要设置[OpenAI API密钥](https://beta.openai.com/account/api-keys)作为`OPENAI_API_KEY`环境变量或直接在应用程序设置中设置API密钥。
 
-You can try client using browser version [here](https://wieslawsoltes.github.io/ChatGPT/).
+您可以尝试使用浏览器版本的客户端[此处](https://wieslawsoltes.github.io/ChatGPT/).
 
-![image](https://user-images.githubusercontent.com/2297442/224843834-a58190df-3bdb-4722-b737-94e7adc87805.png)
+![图像](https://user-images.githubusercontent.com/2297442/224843834-a58190df-3bdb-4722-b737-94e7adc87805.png)
 
-# Shortcuts
+# 快捷方式
 
 ### Main Window
 
-- Ctrl+Shift+A - Toggle between transparent and acrylic blur window style.
-- Ctrl+Shift+S - Toggle between visible and hidden window state.
+- Ctrl+Shift+A - 在透明和丙烯酸模糊窗口样式之间切换。
+- Ctrl+Shift+S - 在可见和隐藏窗口状态之间切换。
 
 ### Message Prompt
 
-- Enter - Send prompt.
-- Escape - Cancel edit.
-- F2 - Edit prompt.
-- Shift+Enter, Alt+Enter - Insert new line.
+- Enter - 发送prompt。
+- Escape - 取消编辑。
+- F2 - 编辑prompt.
+- Shift+Enter, Alt+Enter - 换行。
 
 # Build
 
-1. Install [.NET 7.0](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
-2. Run `dotnet workload install ios android wasm-tools` command
-3. `dotnet publish -c Release` command inside project directory (mobile/desktop) or `dotnet run` for desktop to just run
+1.安装[.NET 7.0](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
+2.运行`dotnet workload install ios android wasm tools`命令
+3.项目目录（移动/桌面）中的“dotnet publish-c Release”命令，或桌面仅运行的“dotnet-run”命令
 
-### Dependencies
+### 依赖
 
 - [Avalonia](https://github.com/AvaloniaUI/Avalonia)
 - [Markdown.Avalonia](https://github.com/whistyun/Markdown.Avalonia)
@@ -43,19 +42,19 @@ You can try client using browser version [here](https://wieslawsoltes.github.io/
 
 # .NET tool
 
-Install:
+安装:
 ```bash
 dotnet tool install --global ChatGPT.CLI --version 1.0.0-preview.9
 ```
 
-Uninstall:
+卸载:
 ```bash
 dotnet tool uninstall --global ChatGPT.CLI
 ```
 
 - [ChatGPT.CLI](https://www.nuget.org/packages/ChatGPT.CLI) - An .NET ChatGPT tool.
 
-### Usage
+### 使用
 
 ```
 ChatGPT.CLI:
@@ -87,9 +86,9 @@ Options:
 -?, -h, --help                             Show help and usage information
 ```
 
-### Examples
+### 示例
 
-- Using .NET tool `chat` command:
+- 使用 .NET tool `chat` 命令:
 
 C# to VB
 ```bash
@@ -106,12 +105,12 @@ Refactor C# code
 chat -d ./ -e cs -p *.cs --directions "You are C# expert. Refactor C# code to use fluent api. Write only code."
 ```
 
-Write API documentation
+编写API文档
 ```bash
 chat -d ./ -e md -p *.cs --directions "You are a technical documentation writer. Write API documentation for C# code. If XML docs are missing write them."
 ```
 
-- Run from source
+- 从源码运行
 
 C# to VB
 ```bash
@@ -123,12 +122,12 @@ C# to F#
 dotnet run -- -d ./ -e fs -p *.cs --directions "You are C# to F# conversion expert. Convert input code from C# to F#. Write only code."
 ```
 
-Write API documentation
+编写API文档
 ```bash
 dotnet run -- -d ./ -e md -p *.cs --directions "You are a technical documentation writer. Write API documentation for C# code. If XML docs are missing write them."
 ```
 
-### Settings file format
+### 配置文件
 
 ```json
 {
@@ -145,7 +144,7 @@ dotnet run -- -d ./ -e md -p *.cs --directions "You are a technical documentatio
 
 # COM
 
-In the build release directory `ChatGPT\ChatGptCom\bin\Release\net462\` run following command to register `ChatGptCom.dll`.
+在发布版本目录中 `ChatGPT\ChatGptCom\bin\Release\net462\` 运行以下命令进行注册 `ChatGptCom.dll`.
 
 32-bit
 ```
@@ -159,7 +158,7 @@ c:\Windows\Microsoft.NET\Framework64\v4.0.30319\regasm.exe /codebase /tlb ChatGp
 
 ### Microsoft Work 2010
 
-Add `ChatGPT\ChatGptCom\bin\Release\net462\ChatGptCom.tlb` to `References` using `Tools > References...` menu in `Microsoft Visual Basic for Applications`.
+添加`ChatGPT\ChatGptCom\bin\Release\net462\ChatGptCom.tlb` to `References` using `Tools > References...` menu in `Microsoft Visual Basic for Applications`.
 
 ```vba
 Option Explicit
